@@ -18,5 +18,8 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       - name: add timeout
-        run: sleep 90
+        run: sleep 40
         timeout-minutes: 1
+      - name: run to failuer
+        run: exit 1
+        continue-on-error: true
