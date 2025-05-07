@@ -7,6 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
+  continue-on-error: true
   build:
     runs-on: ubuntu-latest
     steps:
@@ -18,8 +19,8 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       - name: add timeout
-        run: sleep 40
+        run: sleep 90
         timeout-minutes: 1
       - name: run to failuer
         run: exit 1
-        continue-on-error: true
+        # continue-on-error: true
