@@ -24,4 +24,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print the output
-        run: echo ${{ needs.node-matrix.outputs.node-matrix-output- }}
+        run: echo ${{ needs.node-matrix.outputs.node-matrix-output-1 }}
