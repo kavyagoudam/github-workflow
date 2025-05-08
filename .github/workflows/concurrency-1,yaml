@@ -1,0 +1,17 @@
+name: concurrency 1
+on:
+ workflow_dispatch:
+   inputs:
+     runs:
+       count: 1
+       env: "prod, staging"
+
+  concurrency: concurrency 1
+  cancel-in-progress: true
+
+jobs:
+  concurrency-test:
+  runs-on: ubunti-latest
+  steps:
+    - name: test
+      run: sleep 90
