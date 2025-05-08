@@ -1,20 +1,14 @@
-name: concurrency 1
+name: Concurrency 1
 on:
-- push
-- workflow_dispatch:
+  workflow_dispatch:
     inputs:
-      runs:
-        count: 1
-        env: "prod, staging"
-
-  concurrency: concurrency 1
-  cancel-in-progress: true
-
-
+      environment:
+        description: "Environment"
+        type: environment
+        required: true
 
 jobs:
-  concurrency-test:
-  runs-on: ubunti-latest
-  steps:
-    - name: test
-      run: sleep 90
+  sleep:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep 30
