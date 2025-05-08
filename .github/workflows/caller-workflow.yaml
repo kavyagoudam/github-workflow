@@ -9,7 +9,7 @@ on:
 
 jobs:
   calling-a-reusable-workflow:
-    uses: ./.github/workflows/reusable-workflow.yaml@main
+    uses: ./.github/workflows/reusable-workflow.yaml
     with:
       name: ${{ inputs.name }}
     secrets:
