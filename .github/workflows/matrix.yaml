@@ -21,6 +21,7 @@ jobs:
   
   os-matrix:
     needs: node-matrix
+    runs-on: ubuntu-latest
     steps:
       - name: print the output
         run: echo ${{ needs.node-matrix.outputs.node-matrix-output- }}
