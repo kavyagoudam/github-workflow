@@ -1,10 +1,11 @@
 name: concurrency 1
 on:
- workflow_dispatch:
-   inputs:
-     runs:
-       count: 1
-       env: "prod, staging"
+- push
+- workflow_dispatch:
+    inputs:
+      runs:
+        count: 1
+        env: "prod, staging"
 
   concurrency: concurrency 1
   cancel-in-progress: true
