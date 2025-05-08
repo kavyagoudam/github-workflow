@@ -1,0 +1,31 @@
+name: resuable workflow
+on:
+  workflow_call:
+    inputs:
+      name: 
+        description: "workflow description"
+        type: string
+        default: 'ali'
+        required: false
+    secrets:
+      access-token:
+        description: 'token'
+        required: true
+
+jobs:
+  checkout:
+    runs-on: ubuntu_latest
+    steps:
+      - name: github checkout
+        run: ls -a
+ 
+  log-context-and-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: github contexts
+        run: echo '${{ toJson(github)}}'
+      - name: Display name input
+        run: echo '${{inputs.name}}
+      - name: Display access-token input
+        run: echo '${{inputs.access-token}}'
+       
