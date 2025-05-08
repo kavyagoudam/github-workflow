@@ -2,10 +2,10 @@ name: matrix job
 on: [ push ]
 jobs:
   node-matrix:
+    outputs:
+      node-matrix-output-1: ${{ steps.output1.outputs.step-output1 }}
+      node-matrix-output-2: ${{ steps.output2.outputs.step-output2 }}
     runs-on: ubuntu-latest
-    #strategy:
-      #matrix:
-        #node_version: [14, 15, 16]
     steps:
       - uses: actions/github-script@v6
         with:
@@ -18,5 +18,9 @@ jobs:
       - name: print the output 2
         run: echo "step-output2=check2" >> $GITHUB_OUTPUT
         id: output2
+  
+  os-matrix:
+    needs: node-matrix
+    steps:
       - name: print the output
-        run: echo ${{ steps.output1.outputs.step-output1 }}
+        run: echo ${{ needs.node-matrix.outputs.node-matrix-output- }}
