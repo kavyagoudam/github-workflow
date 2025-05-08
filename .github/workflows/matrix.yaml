@@ -9,4 +9,12 @@ jobs:
     steps:
       - name: print the node versions
         run: echo ${{ matrix.node_version }}
+      - name: print the output
+        run: echo "step-output1=check1" >> $GITHUB_OUTPUT
+        id: output1
+      - name: print the output 2
+        run: echo "step-output2=check2" >> $GITHUB_OUTPUT
+        id: output2
+      - name: print the output
+        run: echo "${{ output1.result }}"
   
