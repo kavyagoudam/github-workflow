@@ -7,6 +7,9 @@ jobs:
       #matrix:
         #node_version: [14, 15, 16]
     steps:
+      - uses: actions/github-script@v6
+        with:
+          scripts: return "india will win"
       - name: print the node versions
         run: echo ${{ matrix.node_version }}
       - name: print the output
