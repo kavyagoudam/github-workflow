@@ -8,7 +8,7 @@ on:
         default: 'ali'
         required: false
     secrets:
-      access-token:
+      ACCESS_TOKEN:
         description: 'token'
         required: true
 
@@ -27,5 +27,5 @@ jobs:
       - name: Display name input
         run: echo '${{inputs.name}}
       - name: Display access-token input
-        run: echo '${{inputs.access-token}}'
+        run: echo '${{inputs.ACCESS_TOKEN }}'
        
