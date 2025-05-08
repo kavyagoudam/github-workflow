@@ -16,5 +16,5 @@ jobs:
         run: echo "step-output2=check2" >> $GITHUB_OUTPUT
         id: output2
       - name: print the output
-        run: echo "${{ output1.result }}"
+        run: echo "${{ steps.output1.step-output1 }}"
   
