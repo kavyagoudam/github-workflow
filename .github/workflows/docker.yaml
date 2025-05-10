@@ -1,0 +1,14 @@
+name: running jobs in a container
+on: [workflow_dispatch]
+jobs:
+  run_docker_in_container:
+    runs-on: ubuntu-latest
+    container:
+      image: node:18
+      env:
+        API_URL: github.com
+    steps:
+      - name: docker in a job
+        run: |
+          cat /etc/os-release
+    
